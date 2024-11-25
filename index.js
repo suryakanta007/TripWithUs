@@ -251,7 +251,7 @@ app.get('/hotels/sort/reviews', (req, res) => {
 app.get('/hotels/filter/amenity', (req, res) => {
   let amenity = req.query.amenity;
   let newHotels = hotels.filter((hotel) => {
-    return hotel.amenity == amenity;
+    return hotel.amenity.toLowerCase() == amenity.toLowerCase();
   });
   res.json(newHotels);
 });
